@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme variables */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-accent: #f3f4f6;
+  
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-accent: #6b7280;
+  
+  --color-primary: #3b82f6;
+  --color-secondary: #10b981;
+  --color-accent: #8b5cf6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  --color-border: #e5e7eb;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  /* Dark theme variables */
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1f2937;
+  --color-bg-accent: #374151;
+  
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #e5e7eb;
+  --color-text-accent: #d1d5db;
+  
+  --color-primary: #60a5fa;
+  --color-secondary: #34d399;
+  --color-accent: #a78bfa;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  
+  --color-border: #374151;
+  --color-shadow: rgba(0, 0, 0, 0.25);
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Fix Leaflet marker icon sizing */
+.leaflet-div-icon {
+  background: transparent;
+  border: none;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Custom button styles */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+.btn-success {
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+/* For focus indicators */
+:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}
